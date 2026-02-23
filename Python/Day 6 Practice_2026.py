@@ -136,7 +136,27 @@ for i in name:
   print(i)
 
 
-
 for i in range (len(name)):
   print(i,":",name[i])
+
+name
+
+name.append('VIDIT')
+
+name
+
+flag = False
+
+for i in range(len(name)):
+  if str(name[i]).lower() == 'vidit':
+    flag = True
+
+if flag == True:
+   print("found")
+else:
+   print("Not found")
+
+print(name[-1].islower)
+
+
 
