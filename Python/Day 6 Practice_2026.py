@@ -1,5 +1,4 @@
-
-"""#Day 6
+ """#Day 6
 
 ##Q. Find sum of first 100 odd number.
 """
@@ -104,6 +103,12 @@ for i in range (1,7):
 
 """While Loop"""
 
+count = 0
+
+while count < 5:
+  print(count)
+  count = count + 1
+
 #role_number
 #name
 #class
@@ -130,11 +135,18 @@ print(name)
 
 print(len(name))
 
-print(name[-2])
+print(name[9])
+
+name[9] = 'Vidit'
+
+print(name)
+
+name.append(223)
+
+print(name)
 
 for i in name:
   print(i)
-
 
 for i in range (len(name)):
   print(i,":",name[i])
@@ -144,6 +156,8 @@ name
 name.append('VIDIT')
 
 name
+
+print(name[-1].islower)
 
 flag = False
 
@@ -155,8 +169,3 @@ if flag == True:
    print("found")
 else:
    print("Not found")
-
-print(name[-1].islower)
-
-
-
