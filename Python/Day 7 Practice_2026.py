@@ -1,4 +1,4 @@
-"""#Day 7
+ """#Day 7
 
 ##Q. Create a list with numbers between 1 to 10 and the values should be squared
 """
@@ -78,7 +78,7 @@ for i in range (1,7):
 lst = [(i,j) for i in range (1,7) for j in range (1,7)]
 print(lst)
 
-fruits = ['apple','mango','kiwi','orange','banana']
+fruits = ['apple','mango','kiwi','orange','banana','banana']
 
 fruits.append("Watermelon")
 print(fruits)
@@ -95,4 +95,56 @@ print(fruits)
 
 fruits.remove('banana')
 print(fruits)
+
+"""###Slicing Concept"""
+
+fruits = ['apple','mango','kiwi','orange','banana']
+
+fruits [1:2]
+
+fruits [0:4:2] #start:stop:step
+
+"""### List within list
+
+#### 1D list
+"""
+
+lst [23,34,25,[43,56,76],[34,56,76,[12,34,45]],46,76]
+
+"""####2D List"""
+
+lst =[[1,2,3],
+      [4,5,6],
+      [7,8,9]]
+
+      # (0,1)
+      # (0,2)
+      # (0,3)
+      # (1,1)
+      # (1,2)
+
+len(lst)
+
+for i in range(len(lst)):
+ print(lst[i])
+
+for i in range(len(lst)):
+ for j in range(len(lst)):
+   print(lst[i][j])
+
+"""sqaure matrix"""
+
+lst =[[1,2,3,3],
+      [2,3,4,6],
+      [5,6,3,5],
+      [3,5,7,7]]
+
+len(lst)
+
+for i in range(len(lst)):
+ print(lst[i])
+
+for i in range (len(lst)):
+  for j in range(len(lst)):
+    print(lst[i][j], [i],[j])
 
