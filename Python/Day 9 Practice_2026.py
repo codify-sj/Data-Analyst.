@@ -1,4 +1,3 @@
-
 """#Day 9
 
 ##Numpy
@@ -67,7 +66,7 @@ for i in range(len(arr)):
       arr[i][j] = 1
 arr
 
-"""##Q. Eye Function ##middle value to 1."""
+"""##Q. Eye Function ( middle value to 1.)"""
 
 np.eye(4, dtype =int)
 
@@ -77,3 +76,11 @@ import matplotlib.pyplot as plt
 # %matplotlib inline
 
 plt.hist(np.random.randn(10000000), bins = 1000);
+
+import pandas as pd
+
+lst = [1,2,3,4,5]
+
+pd.Series(lst)
+
+pd.Series(index = ['Eshant', 'Pranjal', 'Jayesh', 'Ashish'], data = [1,2,3,4])
