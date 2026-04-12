@@ -6,4 +6,11 @@
 
 !pip install streamlit
 
-import numpy
+
+import pandas as pd
+
+df = pd.read_csv('/content/Datasets/Gaana/songs.csv')
+
+df
+
+df.info()
