@@ -52,6 +52,8 @@ df['language'].unique()
 
 df['language'].nunique()
 
+len(df['language'].unique())
+
 df['singer'].unique()
 
 df['singer'].nunique()
@@ -59,4 +61,20 @@ df['singer'].nunique()
 len(df['singer'].unique())
 
 len(df[df['language'] == 'Urdu'])
+
+df[df['language'] == 'Urdu'].nunique()
+
+
+
+"""## Q. Find number of values where language is Telugu"""
+
+len(df[df['language'] == 'Telugu'])
+
+
+
+df[df['language'] == 'Telugu'].nunique()
+
+
+
+df[df['language'] == 'Telugu']['name']
 
