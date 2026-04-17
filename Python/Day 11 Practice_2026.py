@@ -122,3 +122,11 @@ df['language'].value_counts().sort_values(ascending=True).plot(kind='bar')
 
 df
 
+df['duration'] [:10]
+
+for i in df['duration'] [:10]:
+  print(i)
+
+for i in df['duration'] [:10]:
+  print(i.split(':')[0])
+
