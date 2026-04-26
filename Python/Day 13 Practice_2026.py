@@ -1,4 +1,4 @@
-"""#Day 13"""
+ """#Day 13"""
 
 #Q: Calculate 7638553 sec in hrs,min,sec.
 
@@ -56,7 +56,11 @@ singers.value_counts().sort_values(ascending=False).head(10).to_csv('Top_10_sing
 
 singers.value_counts().sort_values(ascending=False).head(10)
 
-df['singer_id'].str.replace('/artist/','').str.replace('|',',').str.strip()
+
+
+# singers.value_counts().sort_values(ascending=False).head(10).plot(kind = 'bar')
+
+df['singer_id'] = df['singer_id'].str.replace('/artist/','').str.replace('|',',').str.strip()
 
 df
 
