@@ -1,66 +1,56 @@
-"""#Day 14"""
+"""#Day 14 | Project 2"""
 
-#Q: Calculate 7638553 sec in hrs,min,sec.
+!git clone "https://github.com/HarshvardhanSingh-13/Datasets"
 
-7638553 // 3600
+"""##1) Overall Exploration
 
-7638553 % 3600
+### 1.1) Loading the dataset
+"""
 
-2953 //60
+df = pd.read_csv('/content/Datasets/Job Postings/jobs.csv.zip')
+df.head()
 
-2953 % 60
+'''
+KPI's
 
-#2121 Minutes  49 Minutes  13 Sec
+1) Calculate the average rating for each company.
+2) Identify companies with the highest and lowest average ratings.
+3) Compare the distribution of ratings across different companies.
+4) Calculate the total number of reviews for each company.
+5) List the top 10 companies based on average rating and number of reviews.
+6) Identify the top responsibilities for each role
 
-# checking result
-2121*60*60 + 49*60 + 13
+7) Lowest and Highest Rating Companies
+8) Number of Active Jobs in any company | Top Companies
+8) Companies which provide Max/Min Average Salary
+9) Salary Vs Expectation of any company
+10) Companies hiring for most numbers of location
 
-"""### 4.5) Top 10 songs"""
+'''
 
-df
-
-df['name'].value_counts().sort_values(ascending=False).head(10)
-
-df[df['name'] == 'V']
-
-"""### 4.6) Top 5 languages"""
-
-df['language'].value_counts().sort_values(ascending=False).head(5)
-
-df.groupby('language')['language'].count().sort_values(ascending=False).head(5)
-
-"""###4.7) Top 10 singers with most number of solo"""
-
-df['singer_id'].value_counts().sort_values(ascending=False).head(10)
-
-lst = []
-for i in df ['singer_id']:
-  lst.append(len(i.split('|')))
-
-df['no of singers'] = lst
-df.head(5)
-
-df['no of singers'].value_counts().sort_values(ascending=False)
-
-df[df['no of singers'] == 25]
-
-
-
-df[df['no of singers'] == 1]['singer_id'].value_counts().sort_values(ascending=False).head(10)
-
-"""### 4.8) Top 10 singers with most number of songs in total"""
-
-singers = df['singer_id'].str.split('|').explode()
-
-singers.value_counts().sort_values(ascending=False).head(10).to_csv('Top_10_singers_with_most_number_of_songs_in_total.csv')
-
-singers.value_counts().sort_values(ascending=False).head(10)
-
-
-
-# singers.value_counts().sort_values(ascending=False).head(10).plot(kind = 'bar')
-
-df['singer_id'] = df['singer_id'].str.replace('/artist/','').str.replace('|',',').str.strip()
+"""### 1.2) Information about the dataset"""
 
 df
 
+df.info()
+
+df.describe()
+
+"""###1.3) Checking for null values"""
+
+df.isnull().sum()
+
+"""### 1.4) Removing Column 'posted_on'"""
+
+df['posted_on'].unique()
+
+
+
+del df['posted_on']
+df
+
+"""### 1.5) Removing Null Values"""
+
+df.isnull().sum()
+
+df.dropna(subset=['job_id']).isnull().sum()
