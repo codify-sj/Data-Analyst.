@@ -1,4 +1,4 @@
-"""#Day 14 | Project 2"""
+"""#Day 14 | Project 2 (Company Insights EDA)"""
 
 !git clone "https://github.com/HarshvardhanSingh-13/Datasets"
 
@@ -44,8 +44,6 @@ df.isnull().sum()
 
 df['posted_on'].unique()
 
-
-
 del df['posted_on']
 df
 
@@ -54,3 +52,43 @@ df
 df.isnull().sum()
 
 df.dropna(subset=['job_id']).isnull().sum()
+
+df.dropna(subset=['job_id','company']).isnull().sum()
+
+df.dropna(subset=['job_id','company', 'resposibilities'], inplace=True) ##  put (inplace=True) when you are sure because it replace in orginal dataset
+
+df.dropna(subset=['job_id','company', 'resposibilities','location','experience']).isnull().sum()
+
+len(df)
+
+len(df.dropna(subset=['job_id','company', 'resposibilities','location','experience']))
+
+len(df.dropna(subset=['job_id','company', 'resposibilities'])) ## we can also fill most common place/value in location/experience
+
+df['location'].mode() [0]
+
+df['location'].value_counts()
+
+df['experience'].value_counts()
+
+df['location'].mode() [0]
+
+df['experience'].mode() [0]
+
+df.isnull().sum()
+
+df ['location'] = df['location'].fillna(df['location'].mode()[0]) ## replaced the location Null value with the mode value
+
+df ['experience'] = df['experience'].fillna(df['experience'].mode()[0]) ## replaced the experience Null value with the mode value
+
+df.isnull().sum()
+
+df['rating'].unique()
+
+df['reviews'].unique()
+
+df ['rating'] = df['rating'].fillna(0.0)
+
+df ['reviews'] = df['reviews'].fillna('0 Reviews')
+
+df.isnull().sum()
