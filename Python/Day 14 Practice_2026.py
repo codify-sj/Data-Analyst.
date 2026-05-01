@@ -2,6 +2,8 @@
 
 !git clone "https://github.com/HarshvardhanSingh-13/Datasets"
 
+import pandas as pd
+
 """##1) Overall Exploration
 
 ### 1.1) Loading the dataset
