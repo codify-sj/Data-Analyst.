@@ -130,6 +130,11 @@ df['Date_of_Journey'].value_counts()
 
 df.head(2)
 
+# date = []
+# for i in df['Date_of_Journey']:
+#  date.append(i.split('/')[0])
+# df['Date'] = date
+
 df['DATE'] = df['Date_of_Journey'].str.strip().str.split('/').str[0]
 
 df['MONTH'] = df['Date_of_Journey'].str.strip().str.split('/').str[1]
