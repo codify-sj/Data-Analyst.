@@ -1,4 +1,4 @@
-"""#Day 11"""
+"""#Day 11 Project 1 (Gaana EDA)"""
 
 df.info()
 
@@ -129,4 +129,3 @@ for i in df['duration'] [:10]:
 
 for i in df['duration'] [:10]:
   print(i.split(':')[0])
-
