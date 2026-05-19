@@ -1,4 +1,4 @@
-"""#Day 12"""
+"""#Day 12 Project 1 (Gaana EDA)"""
 
 for i in df['duration'][:10]:
   print(i, int(i.split(':')[0])*60 + int(i.split(':')[1]))
@@ -7,7 +7,7 @@ duration = [] #empty_list
 for i in df['duration']:
   mins = int(i.split(':')[0])
   secs = int(i.split(':')[1])
-  duration.append( min*60 + secs)
+  duration.append( mins*60 + secs)
 #duration
 df['duration_in_sec'] = duration
 df
@@ -82,7 +82,7 @@ df.sort_values(by = 'duration_in_sec' , ascending= False).head(5)
 
 df
 
-"""#4) Data Anaytics
+"""##4) Data Anaytics
 
 ##4.1)Total number of unique Songs
 """
@@ -126,10 +126,6 @@ print(len(set(lst)))
 
 """##4.3) Find total Unique Languages"""
 
-Total Songs Played
-5. Plays in hours | 100 Million hours Played
-6. Genre of Songs
-
 df['language'].nunique()
 
 """##4.4) Accumulative duration of songs listed on Ganna"""
@@ -149,4 +145,3 @@ sec = (df['duration_in_sec'].sum() % 3600) % 60
 sec
 
 3160*3600 + 21*60 + 7
-
